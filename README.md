@@ -4,8 +4,6 @@ Dockerization sibcoind and electrumx
 
 ## Install
 
-Run `install.sh` for creating volumes
-
-Build images `docker-compose build`
+Run `sudo ./install.sh` for easy install
 
 Up `docker-compose up -d`
