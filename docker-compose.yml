@@ -13,22 +13,11 @@ services:
   electrumx_d:
     image: electrumx
     build: containers/electrumx/.
-    environment:
-      - DB_DIRECTORY=/srv/db
-      - DAEMON_URL=http://sibcoin:local321@localhost:1944
-      - HOST=
-      - TCP_PORT=50001
-      - COIN=Sibcoin
-      - SSL_PORT=50002
-      - SSL_CERTFILE=/srv/db/server.crt
-      - SSL_KEYFILE=/srv/db/server.key
-      - DONATION_ADDRESS=Sb52XrTGMSojZAcDpvbpyi2h6FPEp74ypY
+    env_file:
+      - ".electrumx.env"
     volumes:
       - "/srv/electrumx_data:/srv/db"
     ports:
       - "50001:50001"
       - "50002:50002"
       - "8000:8000"
-    expose:
-      - 50001
-      - 50002
