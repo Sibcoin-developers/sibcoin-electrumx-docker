@@ -12,7 +12,7 @@ RUN pip install git+git://github.com/Verbalist/x11_gost_hash.git
 RUN useradd electrumx && \
     mkdir -p /srv/db && \
     chown electrumx:electrumx /srv/db
-RUN git clone https://github.com/serbernar/electrumx.git
+RUN git clone https://github.com/kyuupichan/electrumx.git
 RUN chown electrumx:electrumx /electrumx
 WORKDIR /electrumx
 COPY jsonrpc.py lib/jsonrpc.py
